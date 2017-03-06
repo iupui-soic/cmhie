@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//OpenMRS//DTD OpenMRS Config 1.0//EN" "http://resources.openmrs.org/doctype/config-1.0.dtd">
+<module configVersion="1.2">">
+
+    <id>cmhie</id>
+    <name>CMHIE</name>
+    <version>1.0.0</version>
+    <package>org.openmrs.module.casauth</package>
+    <author>Bhavana Srinivas</author>
+    <description>Authentication using SMS services</description>
+
+    <activator>org.openmrs.module.casauth.CasAuthActivator</activator>
+    <require_version>1.8.4</require_version>
+	
+    <!-- Require Global Properties -->
+    <globalProperty>
+        <property>casauth.endpoint.login</property>
+        <defaultValue></defaultValue>
+        <description>SMS services for two factor authentication</description>
+    </globalProperty>
+    <globalProperty>
+        <property>casauth.endpoint.appcode</property>
+        <defaultValue></defaultValue>
+        <description>The application code that is identifiable by your CAS server</description>
+    </globalProperty>
+    <globalProperty>
+        <property>casauth.endpoint.validate</property>
+        <defaultValue></defaultValue>
+        <description>The URL from CAS server for validating a casticket</description>
+    </globalProperty>
+    <globalProperty>
+        <property>casauth.endpoint.logout</property>
+        <defaultValue></defaultValue>
+        <description>The URL from CAS server that is used to logout an authenticated user</description>
+    </globalProperty>
+    <globalProperty>
+        <property>casauth.superuser.username</property>
+        <defaultValue></defaultValue>
+        <description>The username of the CAS superuser that will authenticate the logging in user</description>
+    </globalProperty>
+    <globalProperty>
+        <property>casauth.superuser.zpassword</property>
+        <defaultValue></defaultValue>
+        <description>The password of the CAS superuser that will authenticate the logging in user</description>
+    </globalProperty>
+    
+    <extension>
+        <point>org.openmrs.footerFullBeforeStatusBar</point>
+        <class>@MODULE_PACKAGE@.extension.LoginFormHideExt</class>
+    </extension>
+	
+    <!-- Internationalization -->
+    <messages>
+        <lang>en</lang>
+        <file>messages.properties</file>
+    </messages>
+    <messages>
+        <lang>fr</lang>
+        <file>messages_fr.properties</file>
+    </messages>
+    <messages>
+        <lang>es</lang>
+        <file>messages_es.properties</file>
+    </messages>
+    
+    <filter>
+        <filter-name>logoutInterceptFilter</filter-name>
+        <filter-class>org.openmrs.module.casauth.filter.LogoutInterceptFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>logoutInterceptFilter</filter-name>
+        <url-pattern>/logout</url-pattern>
+    </filter-mapping>
+
+</module>
