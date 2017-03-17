@@ -1,7 +1,7 @@
 # openmrs-module-2FA
 
 ## Overview
-The module allows authentication over CAS - Central authentication service
+The module allows authentication using two-step login
 
 ## Installation
 Build the module from source. Install the omod file through OpenMRS module management. 
