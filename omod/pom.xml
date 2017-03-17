@@ -9,8 +9,8 @@
     <groupId>org.openmrs.module</groupId>
     <artifactId>cmhie-omod</artifactId>
     <packaging>jar</packaging>
-    <name>CMHIE OMOD</name>
-    <description>OpenMRS module thesis 2FA</description>
+    <name>cmhie omod</name>
+    <description>cmhie omod project</description>
 
     <dependencies>		
         <dependency>

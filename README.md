@@ -1,4 +1,4 @@
-# openmrs-module-2FA
+# cmhie
 
 ## Overview
 The module allows authentication using two-step login
@@ -6,13 +6,10 @@ The module allows authentication using two-step login
 ## Installation
 Build the module from source. Install the omod file through OpenMRS module management. 
 After installation complete the configuration. The OpenMRS login page is not seen anymore, 
-so location based login is not possible. A default location is selected or login is without a location. 
-For Legacy UI, user needs to click on the login button on the top header to start CAS authentication
+so location based login is not possible. A default location is selected or login is without a location.
 
 ## Configuration
-Configure the settings for CAS endpoints - login, application code, validate and logout. 
-Configure the username and password for the user who will be used to authenticate other users.
-A username in OpenMRS should exists as the same username as on CAS, so that the user can be authenticated.
+will be added later
 
 ###Build
 To ensure that your commit builds fine run
@@ -38,6 +35,3 @@ To manually run the formatter plugin, do
 ```
 mvn java-formatter:format
 ```
-
-
-
