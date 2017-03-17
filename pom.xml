@@ -7,7 +7,7 @@
     <version>1.0</version>
     <packaging>pom</packaging>
     <name>Consumer Mediated Health Information Exchange</name>
-    <description>Parent project for CAS Authentication</description>
+    <description>Parent project for CMHIE Module</description>
     
     <developers>
         <developer>
