@@ -1,0 +1,89 @@
+html {
+    
+}
+
+body{
+    
+}
+
+h2{
+    
+}
+h3 {
+    
+}
+.box {
+    width: 65%;
+    margin-left: 10px;
+    float:right;
+}
+
+.break {  
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.break2 {  
+    column-count: 2;
+    column-gap: 1px;
+}
+
+.break4 {  
+    column-count: 4;
+    column-gap: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: ghostwhite;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fldset-class{
+    border: 5px black SINGLE;
+}
+
+.legend-class{
+    border: 2px black solid; 
+    margin-left: 1em; 
+    padding: 0.2em 0.8em;
+    background-color:white;
+    color:black;
+}
+
+button#b1 {
+    
+    top: 40%; left: 25%;
+    nav-index: 1;
+   
+}
+
+button#b2 {
+    top: 40%; left: 75%;
+    nav-index: 2;
+}
+
+.vertical_line{
+    height:2px;
+    width:1px;
+    background:#000;
+}
