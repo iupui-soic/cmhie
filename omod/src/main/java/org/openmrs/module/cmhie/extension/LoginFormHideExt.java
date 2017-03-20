@@ -3,7 +3,7 @@
  * v. 2.0 + Health disclaimer. If a copy of the MPL was not distributed with
  * this file, You can obtain one at http://license.openmrs.org
  */
-package org.openmrs.module.casauth.extension;
+package org.openmrs.module.cmhie.extension;
 
 import org.openmrs.module.Extension;
 

@@ -5,11 +5,11 @@
     <id>cmhie</id>
     <name>CMHIE</name>
     <version>1.0.0</version>
-    <package>org.openmrs.module.casauth</package>
+    <package>org.openmrs.module.cmhie</package>
     <author>Bhavana Srinivas</author>
     <description>Authentication using SMS services</description>
 
-    <activator>org.openmrs.module.casauth.CasAuthActivator</activator>
+    <activator>org.openmrs.module.cmhie.CmhieAuthActivator</activator>
     <require_version>1.8.4</require_version>
 	
     <!-- Require Global Properties -->
@@ -65,7 +65,7 @@
     
     <filter>
         <filter-name>logoutInterceptFilter</filter-name>
-        <filter-class>org.openmrs.module.casauth.filter.LogoutInterceptFilter</filter-class>
+        <filter-class>org.openmrs.module.cmhie.filter.LogoutInterceptFilter</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>logoutInterceptFilter</filter-name>

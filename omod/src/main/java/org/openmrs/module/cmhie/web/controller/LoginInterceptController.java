@@ -3,7 +3,7 @@
  * v. 2.0 + Health disclaimer. If a copy of the MPL was not distributed with
  * this file, You can obtain one at http://license.openmrs.org
  */
-package org.openmrs.module.casauth.web.controller;
+package org.openmrs.module.cmhie.web.controller;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,19 +33,19 @@ public class LoginInterceptController extends AbstractController {
 	@Override
 	public ModelAndView handleRequestInternal(HttpServletRequest req, HttpServletResponse res) throws MalformedURLException,
 	        IOException {
-		String casTicket = req.getParameter("casticket");
+		/*String casTicket = req.getParameter("casticket");
 		//CAS ticket is only available after login has completed and needs validation
 		if (casTicket == null) {
 			User autheticatedUser = Context.getAuthenticatedUser();
 			if (autheticatedUser == null) {
-				String casLoginUrl = Context.getAdministrationService().getGlobalProperty("casauth.endpoint.login");
-				String casAppCode = Context.getAdministrationService().getGlobalProperty("casauth.endpoint.appcode");
+				String casLoginUrl = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.login");
+				String casAppCode = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.appcode");
 				return new ModelAndView("redirect:" + casLoginUrl + "?cassvc=" + casAppCode + "&casurl="
 				        + req.getRequestURL());
 			}
 		} else {
-			String casValidateUrl = Context.getAdministrationService().getGlobalProperty("casauth.endpoint.validate");
-			String casAppCode = Context.getAdministrationService().getGlobalProperty("casauth.endpoint.appcode");
+			String casValidateUrl = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.validate");
+			String casAppCode = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.appcode");
 			URL url = new URL(casValidateUrl + "?cassvc=" + casAppCode + "&casticket=" + casTicket + "&casurl="
 			        + req.getRequestURL());
 			//a HTTP connection is created to validate the casticket
@@ -57,11 +57,11 @@ public class LoginInterceptController extends AbstractController {
 				/**
 				 * The CAS validate response is yes on first line, followed by username on next line
 				 */
-				if (in.readLine().equals("yes")) {
+				/*if (in.readLine().equals("yes")) {
 					String superuserUsername = Context.getAdministrationService().getGlobalProperty(
-					    "casauth.superuser.username");
+					    "cmhie.superuser.username");
 					String superuserPassword = Context.getAdministrationService().getGlobalProperty(
-					    "casauth.superuser.zpassword");
+					    "cmhie.superuser.zpassword");
 					String user = in.readLine();
 					Context.authenticate(superuserUsername, superuserPassword);
 					Context.becomeUser(user);
@@ -71,7 +71,7 @@ public class LoginInterceptController extends AbstractController {
 				Context.logout();
 			}
 			in.close();
-		}
-		return new ModelAndView("redirect:/index.htm");
+		}*/
+		return new ModelAndView("redirect:/module/cmhie/login.html");
 	}
 }

@@ -3,7 +3,7 @@
  * v. 2.0 + Health disclaimer. If a copy of the MPL was not distributed with
  * this file, You can obtain one at http://license.openmrs.org
  */
-package org.openmrs.module.casauth.filter;
+package org.openmrs.module.cmhie.filter;
 
 import java.io.IOException;
 import javax.servlet.Filter;
@@ -38,7 +38,7 @@ public class LogoutInterceptFilter implements Filter {
 		if (requestURI.endsWith("/logout")) {
 			Context.logout();
 			HttpServletResponse httpResponse = (HttpServletResponse) res;
-			httpResponse.sendRedirect(Context.getAdministrationService().getGlobalProperty("casauth.endpoint.logout"));
+			httpResponse.sendRedirect(Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.logout"));
 		} else {
 			chain.doFilter(req, res);
 		}

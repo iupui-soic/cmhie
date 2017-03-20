@@ -34,6 +34,6 @@
         </property>
     </bean>
     
-    <bean id="loginInterceptController" class="org.openmrs.module.casauth.web.controller.LoginInterceptController" />
+    <bean id="loginInterceptController" class="org.openmrs.module.cmhie.web.controller.LoginInterceptController" />
     
 </beans>
