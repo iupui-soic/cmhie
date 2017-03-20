@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.openmrs.User;
 import org.openmrs.api.context.Context;
 import org.openmrs.api.context.ContextAuthenticationException;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
@@ -28,11 +30,11 @@ import org.springframework.web.servlet.mvc.AbstractController;
  * See details of CAS authentication - https://kb.iu.edu/d/atfc
  * @author sunbiz
  */
-public class LoginInterceptController extends AbstractController {
+@Controller
+public class LoginInterceptController {
 	
-	@Override
-	public ModelAndView handleRequestInternal(HttpServletRequest req, HttpServletResponse res) throws MalformedURLException,
-	        IOException {
+	@RequestMapping("/login.htm")
+	public String loginIntercept(HttpServletRequest req, HttpServletResponse res) {
 		/*String casTicket = req.getParameter("casticket");
 		//CAS ticket is only available after login has completed and needs validation
 		if (casTicket == null) {
@@ -57,21 +59,21 @@ public class LoginInterceptController extends AbstractController {
 				/**
 				 * The CAS validate response is yes on first line, followed by username on next line
 				 */
-				/*if (in.readLine().equals("yes")) {
-					String superuserUsername = Context.getAdministrationService().getGlobalProperty(
-					    "cmhie.superuser.username");
-					String superuserPassword = Context.getAdministrationService().getGlobalProperty(
-					    "cmhie.superuser.zpassword");
-					String user = in.readLine();
-					Context.authenticate(superuserUsername, superuserPassword);
-					Context.becomeUser(user);
-				}
-			}
-			catch (ContextAuthenticationException casex) {
-				Context.logout();
-			}
-			in.close();
+		/*if (in.readLine().equals("yes")) {
+			String superuserUsername = Context.getAdministrationService().getGlobalProperty(
+			    "cmhie.superuser.username");
+			String superuserPassword = Context.getAdministrationService().getGlobalProperty(
+			    "cmhie.superuser.zpassword");
+			String user = in.readLine();
+			Context.authenticate(superuserUsername, superuserPassword);
+			Context.becomeUser(user);
+		}
+		}
+		catch (ContextAuthenticationException casex) {
+		Context.logout();
+		}
+		in.close();
 		}*/
-		return new ModelAndView("redirect:/module/cmhie/login.html");
+		return "redirect:/module/cmhie/login.html";
 	}
 }
