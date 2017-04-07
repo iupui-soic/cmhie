@@ -12,6 +12,18 @@ h2{
 h3 {
     
 }
+
+.p{
+    font-size: 14pt
+}
+
+.textbox {
+    height: 50px;
+    font-size: 16pt;
+    text-align: center;
+    border-style: double;
+}
+
 .box {
     width: 65%;
     margin-left: 10px;
@@ -29,7 +41,7 @@ h3 {
 }
 
 .break4 {  
-    column-count: 4;
+    column-count: 3;
     column-gap: 10px;
 }
 
@@ -70,20 +82,42 @@ h3 {
     color:black;
 }
 
-button#b1 {
+.button1 {
     
     top: 40%; left: 25%;
     nav-index: 1;
    
 }
 
-button#b2 {
-    top: 40%; left: 75%;
-    nav-index: 2;
+#button2 {
+    text-align: center;
+    margin: auto 0;
+    width: 80px;
+    height: 50px; 
+    border: 5px black single;
+    background-color: lightgrey;
+    font-size: 14px;
 }
 
 .vertical_line{
     height:2px;
     width:1px;
     background:#000;
+}
+
+.image{
+    text-align: left;
+    width: 500px;
+    height: 60px;
+}
+
+.line{
+    border-top: 1px solid black double;
+    margin-top: -20px;
+}
+
+.radiobutton {
+   text-align: center;
+    margin: 0 10px 0 10px;
+   
 }
