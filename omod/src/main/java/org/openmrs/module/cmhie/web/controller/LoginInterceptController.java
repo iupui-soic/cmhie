@@ -5,21 +5,12 @@
  */
 package org.openmrs.module.cmhie.web.controller;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import org.openmrs.User;
-import org.openmrs.api.context.Context;
-import org.openmrs.api.context.ContextAuthenticationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * This controller intercepts the /login.htm URL and handles that request. This takes 
@@ -33,47 +24,8 @@ import org.springframework.web.servlet.mvc.AbstractController;
 @Controller
 public class LoginInterceptController {
 	
-	@RequestMapping("/login.htm")
+	@RequestMapping(method = RequestMethod.GET)
 	public String loginIntercept(HttpServletRequest req, HttpServletResponse res) {
-		/*String casTicket = req.getParameter("casticket");
-		//CAS ticket is only available after login has completed and needs validation
-		if (casTicket == null) {
-			User autheticatedUser = Context.getAuthenticatedUser();
-			if (autheticatedUser == null) {
-				String casLoginUrl = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.login");
-				String casAppCode = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.appcode");
-				return new ModelAndView("redirect:" + casLoginUrl + "?cassvc=" + casAppCode + "&casurl="
-				        + req.getRequestURL());
-			}
-		} else {
-			String casValidateUrl = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.validate");
-			String casAppCode = Context.getAdministrationService().getGlobalProperty("cmhie.endpoint.appcode");
-			URL url = new URL(casValidateUrl + "?cassvc=" + casAppCode + "&casticket=" + casTicket + "&casurl="
-			        + req.getRequestURL());
-			//a HTTP connection is created to validate the casticket
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-			conn.setRequestMethod("GET");
-			conn.setDoOutput(true);
-			BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			try {
-				/**
-				 * The CAS validate response is yes on first line, followed by username on next line
-				 */
-		/*if (in.readLine().equals("yes")) {
-			String superuserUsername = Context.getAdministrationService().getGlobalProperty(
-			    "cmhie.superuser.username");
-			String superuserPassword = Context.getAdministrationService().getGlobalProperty(
-			    "cmhie.superuser.zpassword");
-			String user = in.readLine();
-			Context.authenticate(superuserUsername, superuserPassword);
-			Context.becomeUser(user);
-		}
-		}
-		catch (ContextAuthenticationException casex) {
-		Context.logout();
-		}
-		in.close();
-		}*/
-		return "redirect:/module/cmhie/login.html";
+		return "redirect:/moduleResources/cmhie/Provider_Login.html";
 	}
 }
