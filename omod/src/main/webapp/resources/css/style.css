@@ -83,13 +83,11 @@ h3 {
 }
 
 .button1 {
-    
     top: 40%; left: 25%;
     nav-index: 1;
-   
 }
 
-#button2 {
+.button {
     text-align: center;
     margin: auto 0;
     width: 80px;
