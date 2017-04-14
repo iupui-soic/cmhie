@@ -26,6 +26,6 @@ public class LoginInterceptController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String loginIntercept(HttpServletRequest req, HttpServletResponse res) {
-		return "redirect:/moduleResources/cmhie/Provider_Login.html";
+		return "redirect:/moduleResources/cmhie/Patient_login.html";
 	}
 }
