@@ -1,6 +1,6 @@
 function openmrsLogin() {
-    username= $("#userField").val(),
-    password= $("#passField").val(),
+    username= $("#userField").val();
+    password= $("#passField").val();
     $.ajax({
         beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + password));
@@ -14,8 +14,8 @@ function openmrsLogin() {
 
 
 function cmhieLogin() {
-    username= $("#patientUserName").val(),
-    password= $("#passcode").val(),
+    username= $("#patientUserName").val();
+    password= $("#passcode").val();
     $.ajax({
         beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + passcode));
@@ -28,11 +28,14 @@ function cmhieLogin() {
 }
 
 
+function verifyUsername() {
+    username= $("#patientUserName").val();
+    if(username.length!=0) {
+        $.("#passCodeDiv").css("visibility","visible");
+    }
+}
 
-
-function submit () {
-
-
+function submit() {
 
 
 }
