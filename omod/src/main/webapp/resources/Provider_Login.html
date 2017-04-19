@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>        
+<head>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/cmhie.js"></script>
     <title >
-         Step 1 - Home Screen
-        </title> 
-        
-        <body> 
-            <fieldset>
-                 <img src="https://pbs.twimg.com/profile_images/1669141961/omrs-button.png" alt="OpenMRS" align="left" style="width:54px;height:58px;" class="image">
-            <center> <h2> PROVIDER LOG-IN </h2> </center>
-            </fieldset>
-            <fieldset>
-               <br><br> <center>
-                <img src="http://www.helix-health.com/images/providers.jpg" alt="Provider" style="width:1000px;height:400px;"> <br><br>
-                    <p class="p"> <b> Username <input type="text" name="Username" style="width:20%; float:center;margin-left: 10px; font-size:12pt;"><br><br>
-                    I-PIN <input type="password" name="UserPassword" style="width:20%; float:center; margin-left: 45px;font-size:12pt;" maxlength="10"> </b> </p>
-                 <br> <br>
-                
-                <u><a href="">NewUser? Create Account</a></u> </center><br><br>
-                <div class ="break">
-                    <p align="left"> <input type="submit" value="Sign In!" id="button2"> </p>
-                    <p align="right"> <input type="submit" value="Cancel" id="button2"> </p>
-                </div>
-            </fieldset>   
-        </body>      
-    </head>
+        Step 1 - Home Screen
+    </title>
+
+<body>
+<fieldset>
+    <img src="https://pbs.twimg.com/profile_images/1669141961/omrs-button.png" alt="OpenMRS" align="left" style="width:54px;height:58px;" class="image">
+    <center> <h2> PROVIDER LOG-IN </h2> </center>
+</fieldset>
+<fieldset>
+    <br><br> <center>
+    <img src="img/providers_login_banner.jpg" alt="Provider" style="width:1000px;height:400px;"> <br><br>
+    <b> Username <input class="p" id= "patientUserName" type="text"  style="width:20%; float:center;margin-left: 10px; font-size:12pt;"><br><br>
+        PassCode <input class="p" id="passcode" type="password"  style="width:20%; float:center; margin-left: 15px;font-size:12pt;" maxlength="10"> </b>
+
+    <br><br>
+
+    <button  style="float: center; background-color: lightgrey; border: 5px black single; margin: auto 0; width: 80px; height: 50px; font-size: 14px;" onclick="cmhieLogin()"> Enter </button>
+</fieldset>
+</body>
+</head>
 </html>
