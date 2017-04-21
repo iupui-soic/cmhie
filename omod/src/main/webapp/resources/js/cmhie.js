@@ -35,7 +35,15 @@ function verifyUsername() {
     }
 }
 
-function submit() {
+$("#patientUserName").keypress(function(event) {
+    if (event.which == 13) {
+        validate();
+        alert("You pressed enter");
+     }
+});
 
+//==$("#go").click(function(e){
+//==    alert("clicked");
+//==});
 
-}
+//== $("#go").click();

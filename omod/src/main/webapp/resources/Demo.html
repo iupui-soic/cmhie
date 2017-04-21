@@ -1,55 +1,61 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <link rel="stylesheet" href="style.css">
-    <title > Create Account </title>
-    <fieldset>
+    <title> Create Account </title>
+<fieldset>
 <body>
-<img src="https://pbs.twimg.com/profile_images/1669141961/omrs-button.png" alt="OpenMRS" align="left" style="width:54px;height:58px;" class="image">
+<img src="img/omrs-button.png" alt="OpenMRS" align="left" style="width:54px;height:58px;" class="image">
 <h2 style="font-family:verdana; text-align:center;"> CREATE ACCOUNT </h2>
-<div class="topnav" id="myTopnav">
-    <a href="Demo.html">DEMOGRAPHIC INFO</a>
-    <a href="login.html">LOGIN INFO</a>
-</div>
-<fieldset class="fldset-class"><br>
+<nav>
+    <div style="float: right;">
+        <a href="Patient_login.html">Patient Login</a> |
+        <a href="Provider_Login.html">Provider Login</a>
+    </div>
+</nav>
+<br>
+<strong>
+<fieldset class="fldset-class">
+    <legend class="legend-class"> DEMOGRAPHIC INFORMATION</legend><br>
     <form>
+            Full Name <input type="text" name="Fullname" class="box"> <br><br>
 
-        <b>
-            Family Name <input type="text" name="Familyname" class="box"> <br><br>
+            Address <input type="text" name="Address" class="box"> <br><br>
 
-            Given Name <input type="text" name="Givenname" class="box">   <br><br>
+            <input type="text" name="Address2" class="box"> <br><br>
 
-            Address: Line1 <input type="text" name="Address1" class = "box"> <br><br>
-
-            Address: Line2 <input type="text" name="Address2" class="box">  <br><br>
-
-            Gender: <div class = "radiobutton">
-            <input type="radio" name="Gender" > Male
-            <input type="radio" name="Gender" > Female <br><br>
-        </div>
-            Contact Number <input type="text" name="ContactNumber" class="box"> <br>
-        </b>
+            Gender
+            <div style="float: right; width: 90%">
+                <input type="radio" name="Gender"> Male
+                <input type="radio" name="Gender"> Female
+            </div>
+            <br><br>
+            Contact Number <input type="text" name="ContactNumber" class="box" maxlength="10"> <br>
     </form>
-</fieldset> <br>
+</fieldset>
+<br>
 
 <fieldset class="fldset-class">
-    <legend class="legend-class"> EMERGENCY CONTACT INFORMATION </legend> <br>
-
-    <form>
-        <div class="break">
-            Emergency Contact Name <input type="text" name="EmergencyContact" class="box">
-            Emergency Contact Number <input type="text" name="EmergencyNumber" class = "box" >
-        </div> <br>
-        <div class="break">
-            <a href="Provider_Login.html"> <button style="float: left; background-color: lightgrey; border: 5px black single; margin: auto 0; width: 80px; height: 50px; font-size: 14px;"> Back </button></a>
-            <a href ="login.html"> <button style="float: right; background-color: lightgrey; border: 5px black single; margin: auto 0; width: 80px; height: 50px; font-size: 14px;"> Next </button></a>
-        </div>
-    </form>
-</fieldset>
+    <legend class="legend-class"> LOGIN INFORMATION</legend>
+    <br>
+    <div>
+        Username            <input type="text" name="Username" class="box" size="20" > <br><br>
+        New Password        <input type="password" name="NewPassword"  maxlength="10"> <br><br>
+        Confirm Password    <input type="password" name="ConfirmPassword" maxlength="10"> <br><br>
+        User Role
+        <select>
+            <option value="CareProvider">CareProvider</option>
+            <option value="Patient">Patient</option>
+            <option value="Student">Student</option>
+            <option value="Other">Other</option>
+        </select> <br><br>
+    </div>
+</fieldset> <br>
+    <button style=" float: center; background-color: lightgrey; border: 5px black single; margin: auto 0; width: 10%; height: 50px; font-style: Oblique;font-size: 18px;">
+        Submit
+    </button>
+</strong>
 </body>
 </fieldset>
-
 </head>
-
 </html>
