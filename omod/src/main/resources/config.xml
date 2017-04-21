@@ -62,6 +62,11 @@
         <lang>es</lang>
         <file>messages_es.properties</file>
     </messages>
+
+    <servlet>
+        <servlet-name>CmhieServlet</servlet-name>
+        <servlet-class>org.openmrs.module.cmhie.servlet.CmhieServlet</servlet-class>
+    </servlet>
     
     <filter>
         <filter-name>logoutInterceptFilter</filter-name>

@@ -15,7 +15,7 @@ function openmrsLogin() {
 
 function cmhieLogin() {
     username= $("#patientUserName").val();
-    password= $("#passcode").val();
+    passcode= $("#passcode").val();
     $.ajax({
         beforeSend: function (xhr) {
             xhr.setRequestHeader ("Authorization", "Basic " + btoa(username + ":" + passcode));
@@ -27,23 +27,19 @@ function cmhieLogin() {
     });
 }
 
-
 function verifyUsername() {
     username= $("#patientUserName").val();
     if(username.length!=0) {
-        $.("#passCodeDiv").css("visibility","visible");
+        $("#passCodeDiv").css("visibility","visible");
     }
 }
 
-$("#patientUserName").keypress(function(event) {
-    if (event.which == 13) {
-        validate();
-        alert("You pressed enter");
-     }
+$(document).ready(function() {
+    $("#passField").keydown( function(e) {
+        var key = e.charCode ? e.charCode : e.keyCode ? e.keyCode : 0;
+        if(key == 13) {
+            e.preventDefault();
+            openmrsLogin();
+        }
+    });
 });
-
-//==$("#go").click(function(e){
-//==    alert("clicked");
-//==});
-
-//== $("#go").click();
