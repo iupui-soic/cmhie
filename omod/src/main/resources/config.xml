@@ -14,34 +14,29 @@
 	
     <!-- Require Global Properties -->
     <globalProperty>
-        <property>casauth.endpoint.login</property>
+        <property>cmhie.sms.smsProviderNumber</property>
         <defaultValue></defaultValue>
-        <description>SMS services for two factor authentication</description>
+        <description>The phone number of the SMS provider</description>
     </globalProperty>
     <globalProperty>
-        <property>casauth.endpoint.appcode</property>
+        <property>cmhie.sms.accountSid</property>
         <defaultValue></defaultValue>
-        <description>The application code that is identifiable by your CAS server</description>
+        <description>The ACCOUNT SID from the SMS provider</description>
     </globalProperty>
     <globalProperty>
-        <property>casauth.endpoint.validate</property>
+        <property>cmhie.sms.authToken</property>
         <defaultValue></defaultValue>
-        <description>The URL from CAS server for validating a casticket</description>
+        <description>The auth token from the SMS provider</description>
     </globalProperty>
     <globalProperty>
-        <property>casauth.endpoint.logout</property>
+        <property>cmhie.daemon.username</property>
         <defaultValue></defaultValue>
-        <description>The URL from CAS server that is used to logout an authenticated user</description>
+        <description>The username of the CMHIE daemon that is used to check valid user and their authcode</description>
     </globalProperty>
     <globalProperty>
-        <property>casauth.superuser.username</property>
+        <property>cmhie.daemon.zpassword</property>
         <defaultValue></defaultValue>
-        <description>The username of the CAS superuser that will authenticate the logging in user</description>
-    </globalProperty>
-    <globalProperty>
-        <property>casauth.superuser.zpassword</property>
-        <defaultValue></defaultValue>
-        <description>The password of the CAS superuser that will authenticate the logging in user</description>
+        <description>The password of the CMHIE daemon that is used to check valid user and their authcode</description>
     </globalProperty>
     
     <extension>
@@ -64,7 +59,7 @@
     </messages>
 
     <servlet>
-        <servlet-name>CmhieServlet</servlet-name>
+        <servlet-name>cmhieServlet</servlet-name>
         <servlet-class>org.openmrs.module.cmhie.servlet.CmhieServlet</servlet-class>
     </servlet>
     

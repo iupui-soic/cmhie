@@ -29,9 +29,14 @@ function cmhieLogin() {
 
 function verifyUsername() {
     username= $("#patientUserName").val();
-    if(username.length!=0) {
-        $("#passCodeDiv").css("visibility","visible");
-    }
+    $.ajax({
+        url: "/openmrs/ms/cmhie/cmhieServlet?username=" + username,
+        success: function(result){
+            if(result === 'FOUND') {
+                $("#passCodeDiv").css("visibility","visible");
+            }
+        }
+    });
 }
 
 $(document).ready(function() {

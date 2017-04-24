@@ -38,6 +38,10 @@
             <artifactId>openmrs-test</artifactId>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <finalName>${project.parent.artifactId}-${project.parent.version}</finalName>
