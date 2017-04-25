@@ -31,17 +31,28 @@ public class CmhieServlet extends HttpServlet {
 				Context.authenticate(daemonUsername, daemonPassword);
 				User userByUsername = Context.getUserService().getUserByUsername(username);
 				if (null != userByUsername) {
-					sendSms(userByUsername);
-					response.getWriter().write("FOUND");
+					if (null != request.getParameter("passPhrase")) {
+						String passPhrase = request.getParameter("passPhrase");
+						String cmhiePhrase = userByUsername.getUserProperty("cmhiePhrase");
+						if (passPhrase.equals(cmhiePhrase)) {
+							Context.becomeUser(userByUsername.getSystemId());
+							response.sendRedirect("/openmrs");
+						}
+					} else {
+						sendSms(userByUsername);
+						Context.logout();
+						response.getWriter().write("FOUND");
+					}
 				} else {
+					Context.logout();
 					response.getWriter().write("NOTFOUND");
 				}
-				Context.logout();
 			}
 		}
 		catch (Exception ex) {
 			ex.printStackTrace();
 		}
+		
 	}
 	
 	// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -94,17 +105,19 @@ public class CmhieServlet extends HttpServlet {
 		Message message = Message.creator(new PhoneNumber(smsNumber.getValue()), new PhoneNumber(smsProviderNumber), phrase)
 		        .create();
 		System.out.println("PHRASE = " + phrase);
+		patientUser.setUserProperty("cmhiePhrase", phrase.trim());
+		Context.getUserService().saveUser(patientUser);
 	}
 	
-	final String[] dictionary = { "best", "cool", "happy", "new", "champion", "food", "laptop", "hello", "cocoa", "coffee",
-	        "cactus", "blinds", "printer", "chair", "basket", "cards", "calendar", "wires", "table", "papers" };
+	final static String[] dictionary = { "best", "cool", "happy", "new", "champion", "food", "laptop", "hello", "cocoa",
+	        "coffee", "cactus", "blinds", "printer", "chair", "basket", "cards", "calendar", "wires", "table", "papers" };
 	
-	public String randomWords() {
+	public static String randomWords() {
 		String phrase = new String();
-		for (int i = 0; i < 2; i++) {
-			Random ran = new Random();
-			int x = ran.nextInt(1) + 19;
-			phrase.concat(phrase + " " + dictionary[x]);
+		for (int i = 0; i < 3; i++) {
+			Random rand = new Random();
+			int x = rand.nextInt((19 - 0) + 1) + 0;
+			phrase = phrase + " " + dictionary[x];
 		}
 		return phrase;
 	}

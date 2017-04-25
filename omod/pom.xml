@@ -9,8 +9,8 @@
     <groupId>org.openmrs.module</groupId>
     <artifactId>cmhie-omod</artifactId>
     <packaging>jar</packaging>
-    <name>cmhie omod</name>
-    <description>cmhie omod project</description>
+    <name>Comsumer Mediated Health Information Exchange OMOD</name>
+    <description>The OpenMRS module project for cmhie</description>
 
     <dependencies>		
         <dependency>

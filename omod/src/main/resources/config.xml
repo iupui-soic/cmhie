@@ -10,7 +10,7 @@
     <description>Authentication using SMS services</description>
 
     <activator>org.openmrs.module.cmhie.CmhieAuthActivator</activator>
-    <require_version>1.8.4</require_version>
+    <require_version>2.0.0</require_version>
 	
     <!-- Require Global Properties -->
     <globalProperty>
