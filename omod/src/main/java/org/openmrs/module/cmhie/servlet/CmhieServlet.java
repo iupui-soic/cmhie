@@ -36,7 +36,8 @@ public class CmhieServlet extends HttpServlet {
 						String cmhiePhrase = userByUsername.getUserProperty("cmhiePhrase");
 						if (passPhrase.equals(cmhiePhrase)) {
 							Context.becomeUser(userByUsername.getSystemId());
-							response.sendRedirect("/openmrs");
+							Integer personId = userByUsername.getPerson().getPersonId();
+							response.sendRedirect("/openmrs/patientDashboard.form?patientId=" + personId);
 						}
 					} else {
 						sendSms(userByUsername);
