@@ -20,13 +20,13 @@
         <img src="img/providers_login_banner.jpg" alt="Provider" style="width:1000px;height:400px;"> <br><br>
         <form action="/openmrs/ms/cmhie/cmhieServlet">
         <strong>
-            Username <input class="p" id="patientUserName" name="username" type="text"
-                            style="width:20%; float:center;margin-left: 10px; font-size:12pt;" onblur="verifyUsername()" ><br><br>
-            <div id="passCodeDiv" style="visibility: hidden">Pass Phrase <input class="p" name="passPhrase" id="passPhrase" type="text"
+            Username: <input required class="p" id="patientUserName" name="username" type="text"
+                            style="width:20%; float:center;margin-left: 10px; font-size:12pt;" onblur="verifyUsername()"><br><br>
+            <div id="passCodeDiv" required style="visibility: hidden">Passphrase: <input class="p" name="passPhrase" id="passPhrase" type="text"
                             style="width:20%; float:center; margin-left: 15px;font-size:12pt;"> </div>
         </strong>
         <br><br>
-        <input type="submit" class="submitButton"/>
+        <input type="submit" class="submitButton" />
         </form>
 </fieldset>
 </body>
